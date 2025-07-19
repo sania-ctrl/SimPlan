@@ -1,0 +1,79 @@
+ScreenManager:
+    name: "signup"
+    MDFloatLayout:
+        md_bg_color: 226/255, 0, 48/255, 1
+        
+        Image:
+            source: "assets/logo.png"
+            size_hint: 0.7, 0.7
+            pos_hint: {'center_x': 0.22,'center_y': 0.82}
+        MDIconButton:
+            icon: "chevron-left"
+            user_font_size: "35sp"
+            pos_hint: {'center_y': 0.95}
+            on_release:
+                root.manager.transition.direction = "right"
+                root.manager.current = "login"
+        MDLabel:
+            text:"Back"
+            color: 1,1,1,1
+            font_size:"18sp"
+            pos_hint: {'center_x': 0.615,'center_y': 0.949}
+        MDLabel:
+            text: "Please Enter your credentials to"
+            font_size: "18sp"
+            color: 1,1,1,1
+            pos_hint: {'center_x': .6,'center_y': 0.65}
+        MDLabel:
+            text: "Registration"
+            font_size: "28sp"
+            bold: True
+            color: 1,1,1,1
+            pos_hint: {'center_x': .6,'center_y': 0.58}
+        MDFloatLayout:
+            size_hint: .79, .08
+            pos_hint: {'center_x': 0.5,'center_y': 0.42}
+            MDLabel:
+                text: "Username"
+                font_size: "14sp"
+                color: 1,1,1,1
+                pos_hint: {'center_x': 0.5,'center_y': 0.9}
+            TextInput:
+                id: signup_user
+                size_hint_y: .75
+                hint_text: "Please enter username"
+                pos_hint: {'center_x': .49,'center_y': 0.4}
+                background_color: 0,0,0,0
+                cursor_color: 1,1,1,1
+                cursor_width: "2sp"
+                foreground_color: 1,1,1,1
+                font_size:"17sp"
+                multiline: False
+        MDFloatLayout:
+            size_hint: .79, .08
+            pos_hint: {'center_x': 0.5,'center_y': 0.28}
+            MDLabel:
+                text: "Password"
+                font_size: "14sp"
+                color: 1,1,1,1
+                pos_hint: {'center_x': 0.5,'center_y': 0.9}
+            TextInput:
+                id: signup_pass
+                size_hint_y: .75
+                hint_text: "Please enter password"
+                pos_hint: {'center_x': .49,'center_y': 0.4}
+                background_color: 230,230,230,0
+                cursor_color: 1,1,1,1
+                cursor_width: "2sp"
+                foreground_color: 1,1,1,1
+                font_size:"17sp"
+                multiline: False
+    Button:
+        text: "Click to Sign Up"
+        background_color: 1,1,1,1
+        size_hint: .79, .08
+        pos_hint: {'center_x': 0.5,'center_y': .15}
+        bold: True
+        font_size:"24sp"
+        on_press: app.signup()
+    
